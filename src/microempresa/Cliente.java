@@ -49,8 +49,13 @@ public class Cliente {
         return nombre;
     }
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
+    public void setNombre(String nombre) throws Exception {
+        if(nombre.trim().length() >= 3){
+            this.nombre = nombre;
+        }else{
+            throw new Exception("El nombre debe tener al menos 3 caracteres!");
+        }
+        
     }
 
     public String getMail() {
